@@ -1,0 +1,13 @@
+// This is to test that JQuery is working.
+$(document).on('click','a[href="/photos"]', function(event) {event.preventDefault();alert("Hi There! We can do quite a lot with just JavaScript, CSS, and Web Content Displays. Let's test out things here for proof of concept.");window.location.href = "https://staging.globe.gov/photos";});
+
+// This detects if the user is signed in and if the user's name is set to the default GLOBE Observer name of Citizen Scientist, if so they haven't completed the requirements to join the GISN so the application form should be removed from the page. In this case, the element being removed by id below is a Liferay Web Content Display that contains the application form button.
+name = $(".user-full-name").text()
+signin = $(".banner-user-greeting").text()
+if (name == " Citizen Scientist ")
+{
+    $( "#p_p_id_56_INSTANCE_Ti0kzwImjFLY_" ).remove();
+}else if (signin == " Sign In ")
+{
+    $( "#p_p_id_56_INSTANCE_Ti0kzwImjFLY_" ).remove();
+}
